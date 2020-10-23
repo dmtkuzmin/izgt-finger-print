@@ -48,7 +48,7 @@ public class GetDataServiceBean implements GetDataService {
             SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
             String condition = format.format(calendar.getTime());
 
-            Connection connection = DriverManager.getConnection("jdbc:sqlserver://localhost:5454;databaseName=anviz", "d.kuzmin", "ArbaleT38");
+            Connection connection = DriverManager.getConnection("jdbc:sqlserver://localhost;databaseName=anviz", "d.kuzmin", "ArbaleT38");
             String selectSql = "SELECT \n" +
                     "\t   MIN([anviz].[dbo].[Checkinout].CheckTime) AS inTime\n" +
                     "\t  ,MAX([anviz].[dbo].[Checkinout].CheckTime) AS outTime\n" +
@@ -108,7 +108,7 @@ public class GetDataServiceBean implements GetDataService {
             String conditionFrom = format.format(calendarFrom.getTime());
             String conditionTo = format.format(calendarTo.getTime());
 
-            Connection connection = DriverManager.getConnection("jdbc:sqlserver://localhost:5454;databaseName=anviz", "d.kuzmin", "ArbaleT38");
+            Connection connection = DriverManager.getConnection("jdbc:sqlserver://localhost;databaseName=anviz", "d.kuzmin", "ArbaleT38");
             String selectSql = "SELECT \n" +
                     "\t   MIN([anviz].[dbo].[Checkinout].CheckTime) AS inTime\n" +
                     "\t  ,MAX([anviz].[dbo].[Checkinout].CheckTime) AS outTime\n" +
